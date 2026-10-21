@@ -5,6 +5,7 @@ import { urlDelSitio } from "@/lib/site-url";
 const zonasDeServicio = [
   { "@type": "City", name: site.ubicacion.ciudad },
   { "@type": "AdministrativeArea", name: site.ubicacion.departamento },
+  { "@type": "AdministrativeArea", name: "Llanos Orientales" },
   { "@type": "Country", name: site.ubicacion.pais },
 ];
 
@@ -18,7 +19,7 @@ function personaInfluencer(): Record<string, unknown> {
   };
 }
 
-/** Agencia como `ProfessionalService` con área de servicio Villavicencio, el Meta y Colombia. */
+/** Agencia como `ProfessionalService` con área de servicio Villavicencio, el Meta, los Llanos y Colombia. */
 export function organizacionJsonLd(): Record<string, unknown> {
   return {
     "@context": "https://schema.org",

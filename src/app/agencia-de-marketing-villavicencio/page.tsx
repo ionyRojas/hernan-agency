@@ -22,7 +22,7 @@ import { crearMetadata } from "@/lib/seo";
 export const metadata = crearMetadata({
   titulo: "Agencia de marketing en Villavicencio",
   descripcion:
-    "Agencia de marketing y contenido en Villavicencio y el Meta: estrategia, producción audiovisual, fotografía, redes sociales y campañas con influencers.",
+    "La agencia de marketing digital más grande de los Llanos, en Villavicencio y el Meta: estrategia, producción audiovisual, fotografía, redes sociales y campañas con influencers.",
   ruta: rutas.agencia,
 });
 
@@ -39,7 +39,7 @@ export default function AgenciaDeMarketing() {
     <>
       <Hero
         titulo="Agencia de marketing en Villavicencio"
-        descripcion="Creamos contenido estratégico, producción audiovisual y campañas para que tu marca se vea profesional y conecte con su audiencia."
+        descripcion="Somos la agencia de marketing digital más grande de los Llanos: creamos contenido, producción audiovisual y campañas que posicionan tu marca y conectan con su audiencia."
         imagen={media.servicios.audiovisual.portada}
         alt="Equipo de Digital Mys produciendo contenido"
       >
@@ -123,7 +123,7 @@ export default function AgenciaDeMarketing() {
           id="cobertura"
           etiqueta="Cobertura"
           titulo={`Desde ${site.ubicacion.ciudad} para el ${site.ubicacion.departamento} y toda ${site.ubicacion.pais}`}
-          texto="Trabajamos de forma presencial en Villavicencio y el Meta, y de forma remota con marcas de otras ciudades y países."
+          texto="La agencia que más se mueve en el Meta y los Llanos. Trabajamos de forma presencial en Villavicencio y el Meta, y de forma remota con marcas de otras ciudades y países."
         />
       </Seccion>
 
@@ -131,7 +131,7 @@ export default function AgenciaDeMarketing() {
         <EncabezadoSeccion
           id="preguntas"
           etiqueta="Preguntas"
-          titulo="Preguntas frecuentes"
+          titulo="Preguntas frecuentes sobre nuestra agencia en Villavicencio"
           className="mb-10"
         />
         <PreguntasFrecuentes preguntas={preguntasAgencia} />

@@ -7,8 +7,13 @@ export const site = {
   agencia: {
     nombre: "Digital Mys",
     eslogan: "Transformamos empresas en marcas visibles.",
+    /**
+     * Frase de posicionamiento regional. Es una afirmación comparativa: debe poder
+     * comprobarse. Se escribe solo aquí; cambiarla aquí la cambia en toda la web.
+     */
+    posicionamiento: "La agencia de marketing digital más grande de los Llanos",
     descripcion:
-      "Agencia creativa y de contenido en Villavicencio. Creamos contenido estratégico y de calidad que conecta con personas y genera oportunidades de crecimiento.",
+      "La agencia de marketing digital más grande de los Llanos Orientales. Desde Villavicencio creamos contenido estratégico y de calidad que conecta con personas y genera oportunidades de crecimiento.",
   },
   influencer: {
     nombre: "Hernancho Castillo",
@@ -16,6 +21,18 @@ export const site = {
     instagram: "hernanchocastillo",
     whatsapp: "573058135513",
     whatsappVisible: "+57 305 813 5513",
+  },
+  /**
+   * TODO: PROVISIONAL. Números de ejemplo para maquetar, excepto `seguidores`.
+   * Reemplazar por los reales antes de publicar. Se leen en la franja de logros del
+   * inicio, en la comunidad y en las preguntas frecuentes: editar solo aquí.
+   */
+  logros: {
+    seguidores: "100K+",
+    marcasAtendidas: "150+",
+    aniosTrayectoria: "5+",
+    alcanceMensual: "2M+",
+    visualizaciones: "10M+",
   },
   /** Quien desarrolló la web. Aparece en el footer con un enlace a su WhatsApp. */
   desarrollador: {

@@ -4,15 +4,11 @@ type CuadriculaCifrasProps = {
   cifras: readonly Cifra[];
 };
 
-/** Bloques de cifras. Solo muestra las que tienen un valor real confirmado. */
+/** Bloques de cifras de la comunidad. */
 export function CuadriculaCifras({ cifras }: CuadriculaCifrasProps) {
-  const visibles = cifras.filter((cifra) => cifra.valor !== null);
-
-  if (visibles.length === 0) return null;
-
   return (
     <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {visibles.map((cifra, indice) => (
+      {cifras.map((cifra, indice) => (
         <div
           key={cifra.etiqueta}
           className={`tarjeta-viva revelar rounded-3xl border border-linea bg-superficie p-8 ${

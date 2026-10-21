@@ -24,7 +24,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const tituloBase = `${site.agencia.nombre} | Agencia de marketing y contenido en Villavicencio`;
+const tituloBase = `${site.agencia.nombre} | ${site.agencia.posicionamiento} | Villavicencio`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(urlDelSitio),

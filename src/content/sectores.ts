@@ -67,7 +67,15 @@ export const sectoresPrincipales: readonly Sector[] = [
       },
     ],
     mensajeWhatsApp: "Hola, tengo un restaurante y quiero conocer los planes.",
-    preguntas: [preguntaCobertura, preguntaTiempos],
+    preguntas: [
+      {
+        pregunta: "¿Cómo promocionar un restaurante en Villavicencio?",
+        respuesta:
+          "Con fotografía y reels que muestren tus platos y tu ambiente, una parrilla de contenido constante y alianzas con creadores de contenido de la región. Lo diseñamos según tu restaurante y tu público.",
+      },
+      preguntaCobertura,
+      preguntaTiempos,
+    ],
   },
   {
     slug: "marcas-consumo",
@@ -101,7 +109,15 @@ export const sectoresPrincipales: readonly Sector[] = [
       },
     ],
     mensajeWhatsApp: "Hola, tengo una marca de consumo y quiero conocer los planes.",
-    preguntas: [preguntaCobertura, preguntaTiempos],
+    preguntas: [
+      {
+        pregunta: "¿Hacen marketing para marcas de consumo en Villavicencio?",
+        respuesta:
+          "Sí. Creamos fotografía de producto, una identidad de contenido, estrategia de comunicación y campañas con influencers para marcas de consumo del Meta y de toda Colombia.",
+      },
+      preguntaCobertura,
+      preguntaTiempos,
+    ],
   },
   {
     slug: "empresas-locales",
@@ -131,7 +147,15 @@ export const sectoresPrincipales: readonly Sector[] = [
       },
     ],
     mensajeWhatsApp: "Hola, tengo una empresa local y quiero conocer los planes.",
-    preguntas: [preguntaCobertura, preguntaTiempos],
+    preguntas: [
+      {
+        pregunta: "¿Cómo mejorar las redes sociales de mi empresa en Villavicencio?",
+        respuesta:
+          "Empieza por un plan: definir qué comunicar, con qué estilo y con qué frecuencia. Nosotros lo armamos, producimos fotos y videos con criterio y publicamos con constancia para que tu empresa se vea tan sólida como es.",
+      },
+      preguntaCobertura,
+      preguntaTiempos,
+    ],
   },
   {
     slug: "ecommerce",
@@ -161,7 +185,15 @@ export const sectoresPrincipales: readonly Sector[] = [
       },
     ],
     mensajeWhatsApp: "Hola, tengo un e-commerce y quiero conocer los planes.",
-    preguntas: [preguntaCobertura, preguntaTiempos],
+    preguntas: [
+      {
+        pregunta: "¿Crean contenido para tiendas online y e-commerce en Colombia?",
+        respuesta:
+          "Sí. Hacemos fotografía de catálogo y de estilo de vida, video corto de producto y piezas para campañas, lanzamientos y temporadas, desde Villavicencio para toda Colombia.",
+      },
+      preguntaCobertura,
+      preguntaTiempos,
+    ],
   },
   {
     slug: "hoteles-turismo",
@@ -191,7 +223,15 @@ export const sectoresPrincipales: readonly Sector[] = [
       },
     ],
     mensajeWhatsApp: "Hola, tengo un negocio de turismo y quiero conocer los planes.",
-    preguntas: [preguntaCobertura, preguntaTiempos],
+    preguntas: [
+      {
+        pregunta: "¿Hacen marketing para hoteles y turismo en el Meta y los Llanos?",
+        respuesta:
+          "Sí. Producimos fotografía y video de experiencias, contenido de destino y campañas con creadores para hoteles, agencias de viajes y rutas turísticas del Meta y los Llanos.",
+      },
+      preguntaCobertura,
+      preguntaTiempos,
+    ],
   },
 ];
 

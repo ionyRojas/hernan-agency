@@ -6,6 +6,7 @@ import { BotonWhatsApp } from "@/components/boton-whatsapp";
 import { CuadriculaCifras } from "@/components/cuadricula-cifras";
 import { EncabezadoSeccion } from "@/components/encabezado-seccion";
 import { FranjaClientes } from "@/components/franja-clientes";
+import { FranjaLogros } from "@/components/franja-logros";
 import { Hero } from "@/components/hero";
 import { IndiceServicios } from "@/components/indice-servicios";
 import { PreguntasFrecuentes } from "@/components/preguntas-frecuentes";
@@ -32,9 +33,9 @@ export default function Inicio() {
     <>
       <Hero
         altura="completa"
-        kicker="Agencia de marketing en Villavicencio"
+        kicker={site.agencia.posicionamiento}
         titulo={site.agencia.eslogan}
-        descripcion="Contenido estratégico y de calidad que conecta con personas y genera oportunidades de crecimiento para tu marca."
+        descripcion="Desde Villavicencio movemos marcas, creadores y comunidades en todo el Meta, con contenido estratégico que conecta con personas y genera oportunidades de crecimiento."
         imagen={media.hero.portada}
         alt="Producción de contenido de Digital Mys"
       >
@@ -42,14 +43,16 @@ export default function Inicio() {
         <BotonEnlace href={rutas.planes}>Ver planes mensuales</BotonEnlace>
       </Hero>
 
+      <FranjaLogros />
+
       <FranjaClientes />
 
       <Seccion etiquetadaPor="servicios">
         <EncabezadoSeccion
           id="servicios"
           etiqueta="Servicios"
-          titulo="Soluciones completas, no tareas sueltas"
-          texto="Estrategia, producción y redes trabajando juntas para que tu marca comunique mejor."
+          titulo="Lideramos tu marca de principio a fin"
+          texto="Estrategia, producción y redes trabajando juntas para que tu marca comunique mejor y llegue más lejos."
           className="mb-12"
         />
         <IndiceServicios servicios={servicios} />
@@ -59,8 +62,8 @@ export default function Inicio() {
         <EncabezadoSeccion
           id="comunidad"
           etiqueta="Comunidad"
-          titulo="Una comunidad digital que amplifica tu mensaje"
-          texto="Además de crear campañas, contamos con una comunidad que permite potenciar el mensaje de tu marca."
+          titulo="Una comunidad que ya mueve el Meta y amplifica tu mensaje"
+          texto="Además de crear campañas, contamos con una comunidad que potencia y multiplica el mensaje de tu marca."
           className="mb-12"
         />
         <CuadriculaCifras cifras={cifras} />
@@ -70,7 +73,7 @@ export default function Inicio() {
         <EncabezadoSeccion
           id="en-redes"
           etiqueta="En redes"
-          titulo="El contenido se ve mejor en movimiento"
+          titulo="Lo que publicamos pone a hablar a los Llanos"
           texto="Mira lo que publicamos en Instagram y TikTok."
           className="mb-10"
         />
@@ -92,7 +95,7 @@ export default function Inicio() {
         <EncabezadoSeccion
           id="fundadores"
           etiqueta="Quiénes somos"
-          titulo="Dos perfiles, una sola agencia"
+          titulo="Dos fundadores, una agencia que lidera el Meta"
           texto="Creatividad y conocimiento de audiencias, junto con estructura y visión empresarial."
           className="mb-10"
         />
@@ -112,14 +115,14 @@ export default function Inicio() {
         <EncabezadoSeccion
           id="preguntas"
           etiqueta="Preguntas"
-          titulo="Lo que suelen preguntarnos"
+          titulo="Preguntas frecuentes sobre marketing digital en Villavicencio"
           className="mb-10"
         />
         <PreguntasFrecuentes preguntas={preguntasInicio} />
       </Seccion>
 
       <BandaCta
-        titulo="Hablemos de tu marca"
+        titulo="Lleva tu marca al siguiente nivel"
         texto="Cuéntanos qué vendes, a quién quieres llegar y qué quieres construir. Te respondemos por WhatsApp."
         mensaje={mensajes.general}
       />

@@ -1,17 +1,15 @@
+import { site } from "@/content/site";
+
 export type Cifra = {
-  /** `null` mientras el dato real no esté confirmado. Las cifras sin valor no se muestran. */
-  valor: string | null;
+  valor: string;
   etiqueta: string;
 };
 
 /**
- * Cifras de la comunidad. Solo se muestran las que tienen valor. No se inventan números:
- * cuando lleguen los datos reales de alcance y visualizaciones, se escriben aquí y se
- * actualizan periódicamente.
+ * Cifras de la comunidad. Los valores viven en `site.logros`; aquí solo se les da etiqueta.
  */
 export const cifras: readonly Cifra[] = [
-  { valor: "100K+", etiqueta: "Más de 100 mil seguidores en redes" },
-  { valor: null, etiqueta: "Alcance mensual" },
-  { valor: null, etiqueta: "Visualizaciones" },
-  { valor: null, etiqueta: "Publicaciones por campaña" },
+  { valor: site.logros.seguidores, etiqueta: "Seguidores en redes" },
+  { valor: site.logros.alcanceMensual, etiqueta: "Alcance mensual" },
+  { valor: site.logros.visualizaciones, etiqueta: "Visualizaciones" },
 ];
