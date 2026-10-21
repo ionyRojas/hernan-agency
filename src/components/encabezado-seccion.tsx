@@ -15,7 +15,7 @@ export function EncabezadoSeccion({
   className = "",
 }: EncabezadoSeccionProps) {
   return (
-    <header className={`max-w-3xl ${className}`}>
+    <header className={`max-w-3xl revelar ${className}`}>
       {etiqueta ? (
         <p className="mb-3 text-sm font-semibold tracking-[0.2em] text-acento uppercase">
           {etiqueta}

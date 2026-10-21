@@ -75,7 +75,7 @@ export default async function PaginaDeSector({ params }: PageProps<"/sectores/[s
           {sector.problemas.map((problema) => (
             <li
               key={problema}
-              className="rounded-3xl border border-linea bg-superficie p-6 text-lg"
+              className="tarjeta-viva revelar rounded-3xl border border-linea bg-superficie p-6 text-lg"
             >
               {problema}
             </li>
@@ -92,7 +92,10 @@ export default async function PaginaDeSector({ params }: PageProps<"/sectores/[s
         />
         <ul className="grid gap-4 sm:grid-cols-2">
           {sector.queHacemos.map((accion, indice) => (
-            <li key={accion.titulo} className="rounded-3xl border border-linea bg-superficie p-6">
+            <li
+              key={accion.titulo}
+              className="tarjeta-viva revelar rounded-3xl border border-linea bg-superficie p-6"
+            >
               <span className="font-titulo text-3xl font-bold text-acento">
                 {String(indice + 1).padStart(2, "0")}
               </span>

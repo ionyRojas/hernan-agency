@@ -29,11 +29,11 @@ export default function PaginaDeCasos() {
   return (
     <>
       <EncabezadoPagina
-        etiqueta="Casos"
+        etiqueta="Resultados"
         titulo="Casos de éxito de contenido y redes"
         texto="Proyectos reales con estrategia, producción y resultados medibles."
       />
-      <MigasDePan migas={[{ etiqueta: "Casos" }]} />
+      <MigasDePan migas={[{ etiqueta: "Casos de éxito" }]} />
 
       {grupos.length > 1 ? (
         <nav

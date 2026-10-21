@@ -7,7 +7,7 @@ type TarjetaFundadorProps = {
 
 export function TarjetaFundador({ fundador }: TarjetaFundadorProps) {
   return (
-    <article className="overflow-hidden rounded-3xl border border-linea bg-superficie">
+    <article className="group tarjeta-viva revelar overflow-hidden rounded-3xl border border-linea bg-superficie">
       <Media
         src={fundador.imagen}
         alt={`Retrato de ${fundador.nombre}`}

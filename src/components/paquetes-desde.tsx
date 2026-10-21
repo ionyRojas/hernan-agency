@@ -15,7 +15,7 @@ export function PaquetesDesde({ planes, mensajePorPlan = mensajes.plan }: Paquet
         {planes.map((plan) => (
           <li
             key={plan.nombre}
-            className={`relative flex flex-col rounded-3xl border p-8 ${
+            className={`relative flex tarjeta-viva revelar flex-col rounded-3xl border p-8 ${
               plan.recomendado ? "border-acento bg-superficie-alta" : "border-linea bg-superficie"
             }`}
           >

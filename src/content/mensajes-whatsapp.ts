@@ -10,6 +10,7 @@ export const mensajes = {
   influencers: `Hola ${site.influencer.primerNombre}, quiero cotizar una campaña con influencers.`,
   mediaKit: "Hola, quiero solicitar el Media Kit.",
   nosotros: `Hola, vi su historia en ${site.agencia.nombre} y quiero conversar sobre mi marca.`,
-  casos: `Hola, vi los casos de ${site.agencia.nombre} y quiero hablar sobre mi marca.`,
+  casos: `Hola, vi los casos de éxito de ${site.agencia.nombre} y quiero hablar sobre mi marca.`,
+  desarrollador: `Hola ${site.desarrollador.primerNombre}, vengo de la web de ${site.agencia.nombre} y quiero contratar tus servicios de desarrollo de aplicaciones web y móviles.`,
   contacto: `Hola, quiero contarles sobre mi negocio y cotizar con ${site.agencia.nombre}.`,
 } as const;

@@ -21,12 +21,12 @@ export function PreguntasFrecuentes({ preguntas }: PreguntasFrecuentesProps) {
     <div className="divide-y divide-linea border-y border-linea">
       <JsonLd datos={datos} />
       {preguntas.map((item) => (
-        <details key={item.pregunta} className="group py-5">
-          <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-titulo text-lg font-semibold focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-acento sm:text-xl [&::-webkit-details-marker]:hidden">
+        <details key={item.pregunta} className="group acordeon py-5">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-titulo text-lg font-semibold transition-colors hover:text-acento sm:text-xl [&::-webkit-details-marker]:hidden">
             {item.pregunta}
             <span
               aria-hidden="true"
-              className="text-2xl text-acento transition-transform group-open:rotate-45"
+              className="text-2xl text-acento transition-transform duration-300 group-open:rotate-45"
             >
               +
             </span>

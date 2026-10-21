@@ -7,6 +7,12 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  async redirects() {
+    return [
+      { source: "/casos", destination: "/casos-de-exito", permanent: true },
+      { source: "/casos/:slug", destination: "/casos-de-exito/:slug", permanent: true },
+    ];
+  },
   turbopack: {
     rules: {
       "*.css": {

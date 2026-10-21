@@ -22,7 +22,14 @@ export function Media({
 }: MediaProps) {
   return (
     <div className={`relative overflow-hidden bg-superficie ${proporcion} ${className}`}>
-      <Image src={src} alt={alt} fill sizes={sizes} priority={prioridad} className="object-cover" />
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={sizes}
+        priority={prioridad}
+        className="zoom-hover object-cover"
+      />
     </div>
   );
 }

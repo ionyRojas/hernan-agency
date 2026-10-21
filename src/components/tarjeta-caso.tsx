@@ -13,15 +13,15 @@ export function TarjetaCaso({ caso }: TarjetaCasoProps) {
   const pendiente = caso.estado === "pendiente";
 
   return (
-    <article className="group">
+    <article className="group revelar">
       <Link href={rutas.caso(caso.slug)} className="block">
         <div className="relative">
           <Media
             src={media.casos[caso.slug].portada}
-            alt={`Portada del caso ${caso.titulo}`}
+            alt={`Portada del caso de éxito ${caso.titulo}`}
             proporcion="aspect-[4/3]"
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-            className="rounded-3xl border border-linea"
+            className="rounded-3xl border border-linea transition-[box-shadow,border-color] duration-500 group-hover:border-acento/60 group-hover:shadow-brillo"
           />
           {pendiente ? (
             <span className="absolute top-4 left-4 rounded-full bg-fondo/85 px-3 py-1 text-xs font-semibold tracking-wider text-acento uppercase backdrop-blur">
@@ -32,7 +32,7 @@ export function TarjetaCaso({ caso }: TarjetaCasoProps) {
         <p className="mt-4 text-sm font-semibold tracking-wider text-acento uppercase">
           {caso.sector}
         </p>
-        <h3 className="mt-1 font-titulo text-2xl font-bold group-hover:text-acento">
+        <h3 className="mt-1 font-titulo text-2xl font-bold transition-colors group-hover:text-acento">
           {caso.titulo}
         </h3>
         <p className="mt-2 text-gris">{caso.resumen}</p>

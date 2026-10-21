@@ -12,15 +12,15 @@ export function IndiceServicios({ servicios }: IndiceServiciosProps) {
   return (
     <ol className="border-b border-linea">
       {servicios.map((servicio) => (
-        <li key={servicio.numero} className="border-t border-linea">
+        <li key={servicio.numero} className="revelar border-t border-linea">
           <Link
             href={servicio.href}
-            className="group grid items-center gap-4 py-8 transition-colors hover:bg-superficie/60 md:grid-cols-[5rem_1fr_9rem_2rem] md:gap-8"
+            className="group grid items-center gap-4 py-8 transition-colors duration-300 hover:bg-gradient-to-r hover:from-superficie hover:to-transparent md:grid-cols-[5rem_1fr_9rem_2rem] md:gap-8"
           >
-            <span className="font-titulo text-2xl text-gris group-hover:text-acento">
+            <span className="font-titulo text-2xl text-gris transition-colors group-hover:text-acento">
               {servicio.numero}
             </span>
-            <div>
+            <div className="transition-[translate] duration-500 ease-suave group-hover:translate-x-2">
               <h3 className="font-titulo text-2xl font-semibold sm:text-3xl">
                 {servicio.titulo}
                 {servicio.destacado ? (
@@ -40,7 +40,7 @@ export function IndiceServicios({ servicios }: IndiceServiciosProps) {
             />
             <span
               aria-hidden="true"
-              className="hidden text-2xl text-gris transition-transform group-hover:translate-x-1 group-hover:text-acento md:block"
+              className="hidden text-2xl text-gris transition-[translate,color] duration-300 group-hover:translate-x-2 group-hover:text-acento md:block"
             >
               →
             </span>

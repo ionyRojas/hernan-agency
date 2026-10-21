@@ -8,9 +8,9 @@ export const rutas = {
   // redirect 301 en next.config.ts.
   colaboraciones: "/colaboraciones-con-hernancho-castillo",
   nosotros: "/nosotros",
-  casos: "/casos",
+  casos: "/casos-de-exito",
   contacto: "/contacto",
   mediaKit: "/media-kit",
   sector: (slug: string) => `/sectores/${slug}`,
-  caso: (slug: string) => `/casos/${slug}`,
+  caso: (slug: string) => `/casos-de-exito/${slug}`,
 } as const;

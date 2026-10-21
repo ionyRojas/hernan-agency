@@ -10,7 +10,7 @@ import { whatsappUrl } from "@/lib/whatsapp";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-linea bg-fondo/85 backdrop-blur">
+    <header className="sticky top-0 z-50 header-vivo border-b border-linea bg-fondo/85 backdrop-blur">
       <Contenedor className="relative flex h-16 items-center justify-between gap-6">
         <Logo />
 
@@ -20,7 +20,7 @@ export function Header() {
               <li key={enlace.href}>
                 <Link
                   href={enlace.href}
-                  className="text-sm text-gris transition-colors hover:text-texto"
+                  className="enlace-subrayado text-sm text-gris transition-colors hover:text-texto"
                 >
                   {enlace.etiqueta}
                 </Link>

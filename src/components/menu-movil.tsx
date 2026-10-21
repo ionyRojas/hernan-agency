@@ -28,7 +28,7 @@ export function MenuMovil({ enlaces, hrefWhatsApp }: MenuMovilProps) {
         aria-expanded={abierto}
         aria-controls="menu-movil"
         onClick={() => setRutaDondeSeAbrio(abierto ? null : rutaActual)}
-        className="flex size-11 items-center justify-center rounded-full border border-linea text-texto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento"
+        className="flex size-11 items-center justify-center rounded-full border border-linea text-texto transition-colors hover:border-acento hover:text-acento"
       >
         <span className="sr-only">{abierto ? "Cerrar menú" : "Abrir menú"}</span>
         <svg
@@ -55,7 +55,7 @@ export function MenuMovil({ enlaces, hrefWhatsApp }: MenuMovilProps) {
             <li key={enlace.href}>
               <Link
                 href={enlace.href}
-                className="block rounded-lg px-3 py-3 font-titulo text-xl text-texto hover:text-acento"
+                className="block rounded-lg px-3 py-3 font-titulo text-xl text-texto transition-[color,translate] duration-300 hover:translate-x-1 hover:text-acento"
               >
                 {enlace.etiqueta}
               </Link>
@@ -66,7 +66,7 @@ export function MenuMovil({ enlaces, hrefWhatsApp }: MenuMovilProps) {
           href={hrefWhatsApp}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 flex items-center justify-center rounded-full bg-acento px-6 py-3 text-sm font-semibold text-fondo"
+          className="boton mt-4 flex items-center justify-center rounded-full bg-acento px-6 py-3 text-sm font-semibold text-fondo hover:bg-acento-fuerte"
         >
           Escríbenos por WhatsApp
         </a>

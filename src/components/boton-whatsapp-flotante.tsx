@@ -9,7 +9,7 @@ export function BotonWhatsAppFlotante() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escríbenos por WhatsApp"
-      className="fixed right-4 bottom-4 z-40 flex size-14 items-center justify-center rounded-full bg-acento text-fondo shadow-lg shadow-black/40 transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-acento sm:right-6 sm:bottom-6"
+      className="group fixed right-4 bottom-4 z-40 flex size-14 items-center justify-center rounded-full bg-acento text-fondo shadow-lg shadow-black/40 transition-[scale,box-shadow] duration-300 after:absolute after:inset-0 after:animate-latido after:rounded-full hover:scale-110 hover:shadow-brillo sm:right-6 sm:bottom-6"
     >
       <IconoWhatsApp className="size-7" />
     </a>

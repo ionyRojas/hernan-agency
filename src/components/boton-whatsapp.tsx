@@ -37,7 +37,7 @@ export function BotonWhatsApp({
       href={whatsappUrl(mensaje)}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-acento ${estilosPorVariante[variante]} ${className}`}
+      className={`boton inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold ${estilosPorVariante[variante]} ${className}`}
     >
       <IconoWhatsApp />
       {children}

@@ -46,7 +46,10 @@ export default function Contacto() {
         />
         <ul className="grid gap-4 md:grid-cols-3">
           {quePuedesContarnos.map((item, indice) => (
-            <li key={item} className="rounded-3xl border border-linea bg-superficie p-6">
+            <li
+              key={item}
+              className="tarjeta-viva revelar rounded-3xl border border-linea bg-superficie p-6"
+            >
               <span className="font-titulo text-3xl font-bold text-acento">
                 {String(indice + 1).padStart(2, "0")}
               </span>

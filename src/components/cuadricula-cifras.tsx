@@ -15,7 +15,7 @@ export function CuadriculaCifras({ cifras }: CuadriculaCifrasProps) {
       {visibles.map((cifra, indice) => (
         <div
           key={cifra.etiqueta}
-          className={`rounded-3xl border border-linea bg-superficie p-8 ${
+          className={`tarjeta-viva revelar rounded-3xl border border-linea bg-superficie p-8 ${
             indice === 0 ? "sm:col-span-2" : ""
           }`}
         >

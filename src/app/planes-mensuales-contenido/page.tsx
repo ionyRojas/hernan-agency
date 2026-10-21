@@ -58,7 +58,7 @@ export default function PlanesMensuales() {
           {queIncluye.map((item) => (
             <li
               key={item}
-              className="rounded-3xl border border-linea bg-superficie p-6 font-titulo text-lg font-semibold"
+              className="tarjeta-viva revelar rounded-3xl border border-linea bg-superficie p-6 font-titulo text-lg font-semibold"
             >
               {item}
             </li>

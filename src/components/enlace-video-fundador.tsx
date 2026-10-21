@@ -20,7 +20,7 @@ export function EnlaceVideoFundador({ titulo, imagen, plataforma, url }: EnlaceV
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative block overflow-hidden rounded-3xl border border-linea"
+      className="group relative block tarjeta-viva overflow-hidden rounded-3xl border border-linea"
     >
       <Media
         src={imagen}
@@ -30,7 +30,7 @@ export function EnlaceVideoFundador({ titulo, imagen, plataforma, url }: EnlaceV
       />
       <span
         aria-hidden="true"
-        className="absolute top-1/2 left-1/2 flex size-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-acento text-2xl text-fondo transition-transform group-hover:scale-110"
+        className="absolute top-1/2 left-1/2 flex size-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-acento text-2xl text-fondo shadow-lg shadow-black/40 transition-[scale,box-shadow] duration-300 group-hover:scale-110 group-hover:shadow-brillo"
       >
         ▶
       </span>

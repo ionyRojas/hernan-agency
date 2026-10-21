@@ -18,7 +18,9 @@ export function generateStaticParams() {
   return casos.map((caso) => ({ slug: caso.slug }));
 }
 
-export async function generateMetadata({ params }: PageProps<"/casos/[slug]">): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps<"/casos-de-exito/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const caso = buscarCaso(slug);
   if (!caso) return {};
@@ -32,7 +34,7 @@ export async function generateMetadata({ params }: PageProps<"/casos/[slug]">): 
   });
 }
 
-export default async function DetalleDeCaso({ params }: PageProps<"/casos/[slug]">) {
+export default async function DetalleDeCaso({ params }: PageProps<"/casos-de-exito/[slug]">) {
   const { slug } = await params;
   const caso = buscarCaso(slug);
   if (!caso) notFound();
@@ -47,9 +49,11 @@ export default async function DetalleDeCaso({ params }: PageProps<"/casos/[slug]
         titulo={caso.titulo}
         descripcion={caso.resumen}
         imagen={imagenes.portada}
-        alt={`Portada del caso ${caso.titulo}`}
+        alt={`Portada del caso de éxito ${caso.titulo}`}
       />
-      <MigasDePan migas={[{ etiqueta: "Casos", href: rutas.casos }, { etiqueta: caso.titulo }]} />
+      <MigasDePan
+        migas={[{ etiqueta: "Casos de éxito", href: rutas.casos }, { etiqueta: caso.titulo }]}
+      />
 
       {pendiente ? (
         <Seccion>
@@ -94,7 +98,7 @@ export default async function DetalleDeCaso({ params }: PageProps<"/casos/[slug]
                 {caso.resultados.map((resultado) => (
                   <div
                     key={resultado.etiqueta}
-                    className="rounded-3xl border border-linea bg-superficie p-8"
+                    className="tarjeta-viva revelar rounded-3xl border border-linea bg-superficie p-8"
                   >
                     <dd className="font-titulo text-5xl font-bold text-acento">
                       {resultado.valor}

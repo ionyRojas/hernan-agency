@@ -66,7 +66,10 @@ export default function ContratoDeInfluencers() {
         />
         <ol className="grid gap-5 md:grid-cols-3">
           {pasosDeCampana.map((paso, indice) => (
-            <li key={paso.titulo} className="rounded-3xl border border-linea bg-superficie p-6">
+            <li
+              key={paso.titulo}
+              className="tarjeta-viva revelar rounded-3xl border border-linea bg-superficie p-6"
+            >
               <span className="font-titulo text-4xl font-bold text-acento">
                 {String(indice + 1).padStart(2, "0")}
               </span>
@@ -86,13 +89,13 @@ export default function ContratoDeInfluencers() {
           className="mb-10"
         />
         <div className="grid gap-5 md:grid-cols-2">
-          <div className="rounded-3xl border border-linea bg-superficie p-8">
+          <div className="tarjeta-viva revelar rounded-3xl border border-linea bg-superficie p-8">
             <h3 className="font-titulo text-2xl font-bold">{site.agencia.nombre}</h3>
             <p className="mt-3 text-gris">
               Estrategia, contenido y crecimiento digital para tu marca, con un proceso continuo.
             </p>
           </div>
-          <div className="rounded-3xl border border-linea bg-superficie p-8">
+          <div className="tarjeta-viva revelar rounded-3xl border border-linea bg-superficie p-8">
             <h3 className="font-titulo text-2xl font-bold">{site.influencer.nombre}</h3>
             <p className="mt-3 text-gris">
               Campañas, presencia, influencia y alcance a través de su comunidad en redes.
@@ -118,7 +121,7 @@ export default function ContratoDeInfluencers() {
       <Seccion etiquetadaPor="casos">
         <EncabezadoSeccion
           id="casos"
-          etiqueta="Casos"
+          etiqueta="Casos de éxito"
           titulo="Campañas y resultados"
           className="mb-10"
         />

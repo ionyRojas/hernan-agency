@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { IconoWhatsApp } from "@/components/boton-whatsapp";
 import { Contenedor } from "@/components/contenedor";
 import { Logo } from "@/components/logo";
 import { rutas } from "@/content/rutas";
@@ -8,7 +9,7 @@ import { instagramUrl, site } from "@/content/site";
 import { whatsappUrl } from "@/lib/whatsapp";
 import { mensajes } from "@/content/mensajes-whatsapp";
 
-const enlaceClase = "text-gris transition-colors hover:text-texto";
+const enlaceClase = "enlace-subrayado text-gris transition-colors hover:text-texto";
 
 export function Footer() {
   return (
@@ -39,7 +40,7 @@ export function Footer() {
             </li>
             <li>
               <Link href={rutas.casos} className={enlaceClase}>
-                Casos
+                Casos de éxito
               </Link>
             </li>
             <li>
@@ -108,11 +109,20 @@ export function Footer() {
       </Contenedor>
 
       <div className="border-t border-linea py-6">
-        <Contenedor>
+        <Contenedor className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-gris">
-            © {site.agencia.nombre}. Construimos presencia digital con estrategia, constancia y
-            contenido de calidad. No prometemos resultados inmediatos.
+            Página web creada y desarrollada by{" "}
+            <span className="font-semibold text-texto">{site.desarrollador.nombre}</span>
           </p>
+          <a
+            href={whatsappUrl(mensajes.desarrollador, site.desarrollador.whatsapp)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="boton inline-flex items-center gap-2 self-start rounded-full border border-linea px-4 py-2 text-xs font-semibold text-texto hover:border-acento hover:text-acento"
+          >
+            <IconoWhatsApp className="size-4" />
+            ¿Quieres una web así? Escríbeme
+          </a>
         </Contenedor>
       </div>
     </footer>

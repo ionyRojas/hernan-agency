@@ -17,7 +17,17 @@
   --font-titulo: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
   --font-cuerpo: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
-  --animate-aparecer: aparecer 0.7s ease-out both;
+  /* Sombras: elevada para tarjetas, brillo para el resplandor naranja al interactuar. */
+  --shadow-elevada: 0 22px 44px -20px rgb(0 0 0 / 0.75);
+  --shadow-brillo:
+    0 0 0 1px color-mix(in srgb, var(--color-acento) 40%, transparent),
+    0 22px 48px -16px color-mix(in srgb, var(--color-acento) 38%, transparent);
+
+  --ease-suave: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-aparecer: aparecer 0.7s var(--ease-suave) both;
+  --animate-acercar: acercar 1.8s var(--ease-suave) both;
+  --animate-latido: latido 2.8s ease-out infinite;
 
   @keyframes aparecer {
     from {
@@ -29,12 +39,33 @@
       transform: translateY(0);
     }
   }
+
+  @keyframes acercar {
+    from {
+      transform: scale(1.1);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes latido {
+    0% {
+      box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-acento) 55%, transparent);
+    }
+    70%,
+    100% {
+      box-shadow: 0 0 0 20px transparent;
+    }
+  }
 }
 
 html {
   color-scheme: dark;
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
+  /* Permite animar la altura del acordeón hacia `auto` en los navegadores que lo soportan. */
+  interpolate-size: allow-keywords;
 }
 
 body {
@@ -46,6 +77,201 @@ body {
 ::selection {
   background: var(--color-acento);
   color: var(--color-fondo);
+}
+
+/* Focus visible único para toda la web: anillo naranja con halo suave. */
+@layer base {
+  :where(a, button, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-acento);
+    outline-offset: 4px;
+    box-shadow: 0 0 0 8px color-mix(in srgb, var(--color-acento) 18%, transparent);
+    transition: outline-offset 0.25s var(--ease-suave);
+  }
+}
+
+/*
+ * Interacciones. Todo es CSS: sin JavaScript. Los movimientos solo se activan si la persona
+ * no pidió reducir animaciones; los cambios de color siempre quedan.
+ */
+
+/* Botón: se eleva con brillo, se hunde al presionar y un destello lo cruza. */
+@utility boton {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.35s var(--ease-suave),
+    box-shadow 0.35s var(--ease-suave),
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 35%,
+      rgb(255 255 255 / 0.28) 50%,
+      transparent 65%
+    );
+    transform: translateX(-130%);
+    pointer-events: none;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: var(--shadow-brillo);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    &::after {
+      transition: transform 0.8s var(--ease-suave);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        transform: translateY(-2px);
+      }
+
+      &:hover::after {
+        transform: translateX(130%);
+      }
+    }
+
+    &:active {
+      transform: translateY(0) scale(0.97);
+    }
+  }
+}
+
+/* Tarjeta: se eleva y el borde y la sombra toman el naranja. */
+@utility tarjeta-viva {
+  transition:
+    transform 0.45s var(--ease-suave),
+    box-shadow 0.45s var(--ease-suave),
+    border-color 0.3s,
+    background-color 0.3s;
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: color-mix(in srgb, var(--color-acento) 55%, transparent);
+      box-shadow: var(--shadow-brillo);
+    }
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    &:hover {
+      transform: translateY(-4px);
+    }
+  }
+}
+
+/* Enlace con una línea naranja que crece desde la izquierda. */
+@utility enlace-subrayado {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: -4px;
+    height: 1px;
+    background: var(--color-acento);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s var(--ease-suave);
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    transform: scaleX(1);
+  }
+}
+
+/* Imagen que se acerca despacio cuando se pasa el cursor por su tarjeta (`group`). */
+@utility zoom-hover {
+  transition: transform 0.9s var(--ease-suave);
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    :where(.group):hover & {
+      transform: scale(1.06);
+    }
+  }
+}
+
+/* Aparece al entrar en pantalla. Sin soporte del navegador no hace nada y todo se ve normal. */
+@keyframes revelar {
+  from {
+    opacity: 0;
+    translate: 0 36px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@utility revelar {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      animation: revelar linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+
+      /* Las tarjetas de una misma fila entran una tras otra. */
+      &:nth-child(2) {
+        animation-range: entry 6% entry 66%;
+      }
+      &:nth-child(3) {
+        animation-range: entry 12% entry 72%;
+      }
+      &:nth-child(n + 4) {
+        animation-range: entry 18% entry 78%;
+      }
+    }
+  }
+}
+
+/* Header: la sombra y el fondo se afianzan al bajar la página. */
+@keyframes header-al-bajar {
+  from {
+    background-color: rgb(11 11 15 / 0.55);
+    box-shadow: 0 0 0 0 transparent;
+  }
+  to {
+    background-color: rgb(11 11 15 / 0.96);
+    box-shadow: 0 14px 34px -18px rgb(0 0 0 / 0.9);
+  }
+}
+
+@utility header-vivo {
+  @supports (animation-timeline: scroll()) {
+    animation: header-al-bajar linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 140px;
+  }
+}
+
+/* Acordeón nativo: el contenido se despliega con suavidad donde el navegador lo permite. */
+@utility acordeon {
+  @supports selector(::details-content) {
+    &::details-content {
+      block-size: 0;
+      opacity: 0;
+      overflow: clip;
+      transition:
+        block-size 0.45s var(--ease-suave),
+        opacity 0.35s,
+        content-visibility 0.45s allow-discrete;
+    }
+
+    &[open]::details-content {
+      block-size: auto;
+      opacity: 1;
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

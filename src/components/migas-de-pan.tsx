@@ -35,7 +35,10 @@ export function MigasDePan({ migas }: MigasDePanProps) {
             <li key={miga.etiqueta} className="flex items-center gap-2">
               {indice > 0 ? <span aria-hidden="true">/</span> : null}
               {miga.href ? (
-                <Link href={miga.href} className="hover:text-texto">
+                <Link
+                  href={miga.href}
+                  className="enlace-subrayado transition-colors hover:text-texto"
+                >
                   {miga.etiqueta}
                 </Link>
               ) : (

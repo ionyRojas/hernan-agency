@@ -19,14 +19,20 @@ export function BandaCta({
   return (
     <section aria-label="Contacto" className="py-16 sm:py-24">
       <Contenedor>
-        <div className="rounded-[2rem] border border-linea bg-superficie px-8 py-14 text-center sm:px-16 sm:py-20">
-          <h2 className="mx-auto max-w-3xl font-titulo text-3xl leading-tight font-bold tracking-tight text-balance sm:text-5xl">
-            {titulo}
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-pretty text-gris">{texto}</p>
-          <BotonWhatsApp mensaje={mensaje} className="mt-8 px-8 py-4 text-base">
-            {etiquetaBoton}
-          </BotonWhatsApp>
+        <div className="group relative revelar overflow-hidden rounded-[2rem] border border-linea bg-superficie px-8 py-14 text-center transition-[border-color,box-shadow] duration-500 hover:border-acento/50 hover:shadow-brillo sm:px-16 sm:py-20">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,color-mix(in_srgb,var(--color-acento)_22%,transparent),transparent_65%)] opacity-50 transition-opacity duration-700 group-hover:opacity-100"
+          />
+          <div className="relative">
+            <h2 className="mx-auto max-w-3xl font-titulo text-3xl leading-tight font-bold tracking-tight text-balance sm:text-5xl">
+              {titulo}
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-pretty text-gris">{texto}</p>
+            <BotonWhatsApp mensaje={mensaje} className="mt-8 px-8 py-4 text-base">
+              {etiquetaBoton}
+            </BotonWhatsApp>
+          </div>
         </div>
       </Contenedor>
     </section>

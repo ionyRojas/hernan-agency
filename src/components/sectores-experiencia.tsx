@@ -12,9 +12,9 @@ function Mosaico({ sector }: { sector: SectorDeExperiencia }) {
         alt={`Trabajo de contenido para ${sector.nombre}`}
         proporcion="aspect-[4/3]"
         sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-        className="rounded-2xl border border-linea"
+        className="rounded-2xl border border-linea transition-[box-shadow,border-color] duration-500 group-hover:border-acento/60 group-hover:shadow-brillo"
       />
-      <p className="mt-3 font-titulo text-lg font-semibold group-hover:text-acento">
+      <p className="mt-3 font-titulo text-lg font-semibold transition-colors group-hover:text-acento">
         {sector.nombre}
       </p>
     </>
@@ -34,7 +34,7 @@ export function SectoresExperiencia() {
   return (
     <ul className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
       {sectoresDeExperiencia.map((sector) => (
-        <li key={sector.nombre}>
+        <li key={sector.nombre} className="revelar">
           <Mosaico sector={sector} />
         </li>
       ))}

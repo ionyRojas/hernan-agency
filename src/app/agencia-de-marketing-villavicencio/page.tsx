@@ -58,7 +58,10 @@ export default function AgenciaDeMarketing() {
         />
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {piezasDeLaPropuesta.map((pieza, indice) => (
-            <li key={pieza} className="rounded-3xl border border-linea bg-superficie p-6">
+            <li
+              key={pieza}
+              className="tarjeta-viva revelar rounded-3xl border border-linea bg-superficie p-6"
+            >
               <span className="font-titulo text-3xl font-bold text-acento">
                 {String(indice + 1).padStart(2, "0")}
               </span>
@@ -91,7 +94,7 @@ export default function AgenciaDeMarketing() {
       <Seccion etiquetadaPor="casos">
         <EncabezadoSeccion
           id="casos"
-          etiqueta="Casos"
+          etiqueta="Casos de éxito"
           titulo="Marcas que ya construyen con nosotros"
           className="mb-10"
         />

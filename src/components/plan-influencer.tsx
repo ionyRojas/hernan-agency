@@ -71,7 +71,7 @@ export function PlanInfluencer({ variante = "completo" }: PlanInfluencerProps) {
               {formatosDeColaboracion.map((formato) => (
                 <li
                   key={formato.titulo}
-                  className="rounded-3xl border border-linea bg-superficie p-6"
+                  className="tarjeta-viva revelar rounded-3xl border border-linea bg-superficie p-6"
                 >
                   <h3 className="font-titulo text-xl font-semibold">{formato.titulo}</h3>
                   <p className="mt-2 text-gris">{formato.texto}</p>
@@ -93,7 +93,7 @@ export function PlanInfluencer({ variante = "completo" }: PlanInfluencerProps) {
               {porQueFunciona.map((motivo) => (
                 <li
                   key={motivo.titulo}
-                  className="rounded-3xl border border-linea bg-superficie p-6"
+                  className="tarjeta-viva revelar rounded-3xl border border-linea bg-superficie p-6"
                 >
                   <h3 className="font-titulo text-xl font-semibold">{motivo.titulo}</h3>
                   <p className="mt-2 text-gris">{motivo.texto}</p>
@@ -109,7 +109,7 @@ export function PlanInfluencer({ variante = "completo" }: PlanInfluencerProps) {
               titulo="Para quién es y para quién no"
             />
             <div className="mt-8 grid gap-4 md:grid-cols-2">
-              <div className="rounded-3xl border border-linea bg-superficie p-6">
+              <div className="tarjeta-viva revelar rounded-3xl border border-linea bg-superficie p-6">
                 <h3 className="font-titulo text-xl font-semibold text-acento">Es para ti si…</h3>
                 <ul className="mt-4 space-y-3 text-gris">
                   {paraQuienEs.map((item) => (
@@ -117,7 +117,7 @@ export function PlanInfluencer({ variante = "completo" }: PlanInfluencerProps) {
                   ))}
                 </ul>
               </div>
-              <div className="rounded-3xl border border-linea bg-superficie p-6">
+              <div className="tarjeta-viva revelar rounded-3xl border border-linea bg-superficie p-6">
                 <h3 className="font-titulo text-xl font-semibold">No es para ti si…</h3>
                 <ul className="mt-4 space-y-3 text-gris">
                   {noEsParaQuien.map((item) => (

@@ -17,6 +17,12 @@ export const site = {
     whatsapp: "573058135513",
     whatsappVisible: "+57 305 813 5513",
   },
+  /** Quien desarrolló la web. Aparece en el footer con un enlace a su WhatsApp. */
+  desarrollador: {
+    nombre: "Jonathan Rojas",
+    primerNombre: "Jonathan",
+    whatsapp: "573125423506",
+  },
   fundadora: {
     nombre: "Fernanda",
   },
