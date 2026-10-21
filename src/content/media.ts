@@ -28,7 +28,7 @@ export const media = {
     ogDefault: `${base}/brand/og-default.jpg`,
   },
   hero: {
-    portada: `${base}/hero/hero.jpg`,
+    portada: `${base}/hero/hero.png`,
   },
   equipo: {
     influencer: `${base}/equipo/influencer.jpg`,
